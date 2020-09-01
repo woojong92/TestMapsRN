@@ -6,6 +6,8 @@ platform :ios, '10.0'
 target 'TestMapsRN' do
   config = use_native_modules!
 
+  pod 'NMapsMap'
+
   use_react_native!(:path => config["reactNativePath"])
 
   target 'TestMapsRNTests' do
