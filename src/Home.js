@@ -9,6 +9,10 @@ function Home({navigation}) {
         title="WatchLocation"
         onPress={() => navigation.push('watchLocation')}
       />
+      <Button
+        title="geofencing"
+        onPress={() => navigation.push('geofencing')}
+      />
     </View>
   );
 }

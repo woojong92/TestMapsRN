@@ -5556,6 +5556,11 @@ react-is@^16.12.0, react-is@^16.13.0, react-is@^16.8.1, react-is@^16.8.4, react-
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-boundary@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-boundary/-/react-native-boundary-1.1.1.tgz#08259512634a1a6685f5ef3699a2ca4d39f3ddbc"
+  integrity sha512-CkWlrk5o2IHEanZERZ6v4PscFPm8mDtEy2sUbMBHCo0671c3Nb6UU2I6dXWtQ7IpWOB4ZUlod/KHHrKGfhckCQ==
+
 react-native-geolocation-service@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-5.0.0.tgz#eaf0541c99db9cbed5af5e2ad2822d166e3a7543"
