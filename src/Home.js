@@ -5,6 +5,10 @@ function Home({navigation}) {
   return (
     <View style={{flex: 1, justifyContent: 'center'}}>
       <Button title="Map" onPress={() => navigation.push('map')} />
+      <Button
+        title="WatchLocation"
+        onPress={() => navigation.push('watchLocation')}
+      />
     </View>
   );
 }

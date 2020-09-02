@@ -6,41 +6,11 @@ import NaverMapView, {
   Polyline,
   Polygon,
 } from 'react-native-nmap';
-import {PermissionsAndroid, Platform} from 'react-native';
-
-async function requestLocationPermission() {
-  if (Platform.OS !== 'android') {
-    return;
-  }
-  try {
-    const granted = await PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-      {
-        title: 'Location Permission',
-        message: 'show my location need Location permission',
-        buttonNeutral: 'Ask Me Later',
-        buttonNegative: 'Cancel',
-        buttonPositive: 'OK',
-      },
-    );
-    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-      console.log('You can use the location');
-    } else {
-      console.log('Location permission denied');
-    }
-  } catch (err) {
-    console.warn(err);
-  }
-}
 
 function MyMap() {
   const P0 = {latitude: 37.564362, longitude: 126.977011};
   const P1 = {latitude: 37.565051, longitude: 126.978567};
   const P2 = {latitude: 37.565383, longitude: 126.976292};
-
-  useEffect(() => {
-    requestLocationPermission();
-  }, []);
 
   return (
     <NaverMapView

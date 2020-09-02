@@ -24,6 +24,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NMFClientId</key>
+	<string>uloaq9v29t</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -37,8 +39,20 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+
+
+		  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
+
+
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,9 +67,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NMFClientId</key>
-    <string>uloaq9v29t</string>
-	    <key>NSLocationAlwaysUsageDescription</key>
-    <string>사용자의 위치를 받습니다.</string>
 </dict>
 </plist>

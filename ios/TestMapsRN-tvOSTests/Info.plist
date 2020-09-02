@@ -20,5 +20,11 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Program requires GPS to track cars and job orders</string>
 </dict>
 </plist>
