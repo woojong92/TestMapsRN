@@ -1,14 +1,21 @@
 import React from 'react';
 import Boundary, {Events} from 'react-native-boundary';
 import {useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Alert} from 'react-native';
+import NaverMapView, {
+  Circle,
+  Marker,
+  Path,
+  Polyline,
+  Polygon,
+} from 'react-native-nmap';
 
 function Geofencing() {
   useEffect(() => {
     Boundary.add({
-      lat: 34.017714,
-      lng: -118.499033,
-      radius: 50, // in meters
+      lat: 37.501522,
+      lng: 127.028457,
+      radius: 10, // in meters
       id: 'Chipotle',
     })
       .then(() => console.log('success!'))
@@ -16,12 +23,12 @@ function Geofencing() {
 
     Boundary.on(Events.ENTER, (id) => {
       // Prints 'Get out of my Chipotle!!'
-      console.log(`Get out of my ${id}!!`);
+      Alert.alert(`Get out of my ${id}!!`);
     });
 
     Boundary.on(Events.EXIT, (id) => {
       // Prints 'Ya! You better get out of my Chipotle!!'
-      console.log(`Ya! You better get out of my ${id}!!`);
+      Alert.alert(`Ya! You better get out of my ${id}!!`);
     });
 
     return () => {
@@ -36,10 +43,30 @@ function Geofencing() {
     };
   }, []);
 
+  const P0 = {latitude: 37.501522, longitude: 127.028457};
+  const P1 = {latitude: 37.564462, longitude: 126.977111};
+
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Boundary</Text>
-    </View>
+    <NaverMapView
+      style={{width: '100%', height: '100%'}}
+      showsMyLocationButton={true}
+      center={{...P0, zoom: 16}}
+      onTouch={(e) => console.warn('onTouch', JSON.stringify(e.nativeEvent))}
+      onCameraChange={(e) => console.warn('onCameraChange', JSON.stringify(e))}
+      onMapClick={(e) => console.warn('onMapClick', JSON.stringify(e))}>
+      <Marker coordinate={P0} onClick={() => console.warn('onClick! p0')} />
+      <Marker
+        coordinate={P1}
+        pinColor="blue"
+        onClick={() => console.warn('onClick! p0')}
+      />
+      <Circle
+        coordinate={P0}
+        color={'rgba(255,0,0,0.3)'}
+        radius={10}
+        onClick={() => console.warn('onClick! circle')}
+      />
+    </NaverMapView>
   );
 }
 
