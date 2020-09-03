@@ -19,17 +19,7 @@ function Geofencing() {
       id: 'Chipotle',
     })
       .then(() => console.log('success!'))
-      .catch((e) => console.error('error :(', e));
-
-    Boundary.on(Events.ENTER, (id) => {
-      // Prints 'Get out of my Chipotle!!'
-      Alert.alert(`Get out of my ${id}!!`);
-    });
-
-    Boundary.on(Events.EXIT, (id) => {
-      // Prints 'Ya! You better get out of my Chipotle!!'
-      Alert.alert(`Ya! You better get out of my ${id}!!`);
-    });
+      .catch((e) => console.warn('error :(', e));
 
     return () => {
       // Remove the events
@@ -39,9 +29,19 @@ function Geofencing() {
       // Remove the boundary from native API´s
       Boundary.remove('Chipotle')
         .then(() => console.log('Goodbye Chipotle :('))
-        .catch((e) => console.log('Failed to delete Chipotle :)', e));
+        .catch((e) => console.warn('Failed to delete Chipotle :)', e));
     };
   }, []);
+
+  Boundary.on(Events.ENTER, (id) => {
+    // Prints 'Get out of my Chipotle!!'
+    console.log(`Get out of my ${id}!!`);
+  });
+
+  Boundary.on(Events.EXIT, (id) => {
+    // Prints 'Ya! You better get out of my Chipotle!!'
+    console.log(`Ya! You better get out of my ${id}!!`);
+  });
 
   const P0 = {latitude: 37.501522, longitude: 127.028457};
   const P1 = {latitude: 37.564462, longitude: 126.977111};
@@ -54,17 +54,17 @@ function Geofencing() {
       onTouch={(e) => console.warn('onTouch', JSON.stringify(e.nativeEvent))}
       onCameraChange={(e) => console.warn('onCameraChange', JSON.stringify(e))}
       onMapClick={(e) => console.warn('onMapClick', JSON.stringify(e))}>
-      <Marker coordinate={P0} onClick={() => console.warn('onClick! p0')} />
+      <Marker coordinate={P0} onClick={() => Alert.alert('onClick! p0')} />
       <Marker
         coordinate={P1}
         pinColor="blue"
-        onClick={() => console.warn('onClick! p0')}
+        onClick={() => Alert.alert('onClick! p0')}
       />
       <Circle
         coordinate={P0}
         color={'rgba(255,0,0,0.3)'}
         radius={10}
-        onClick={() => console.warn('onClick! circle')}
+        onClick={() => Alert.alert('onClick! circle')}
       />
     </NaverMapView>
   );

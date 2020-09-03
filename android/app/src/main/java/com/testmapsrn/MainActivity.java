@@ -1,6 +1,7 @@
 package com.testmapsrn;
 
 import com.facebook.react.ReactActivity;
+import com.eddieowens.RNBoundaryPackage;
 
 public class MainActivity extends ReactActivity {
 

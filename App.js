@@ -13,9 +13,11 @@ import {Platform, PermissionsAndroid} from 'react-native';
 import GeofencingScreenn from './src/Geofencing';
 
 async function requestLocationPermission() {
-  if (Platform.OS !== 'android') {
+  if (Platform.OS === 'ios') {
     Geolocation.requestAuthorization('always');
-  } else {
+  }
+
+  if (Platform.OS === 'android') {
     try {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
