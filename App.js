@@ -10,7 +10,8 @@ import HomeScreen from './src/Home';
 import MapScreen from './src/Map';
 import WatchLocationScreen from './src/WatchLocation';
 import {Platform, PermissionsAndroid} from 'react-native';
-import GeofencingScreenn from './src/Geofencing';
+import GeofencingScreen from './src/Geofencing';
+import BgGeolocationScreen from './src/BgGeolocation';
 
 async function requestLocationPermission() {
   if (Platform.OS === 'ios') {
@@ -51,7 +52,8 @@ function App() {
         <Stack.Screen name="home" component={HomeScreen} />
         <Stack.Screen name="map" component={MapScreen} />
         <Stack.Screen name="watchLocation" component={WatchLocationScreen} />
-        <Stack.Screen name="geofencing" component={GeofencingScreenn} />
+        <Stack.Screen name="geofencing" component={GeofencingScreen} />
+        <Stack.Screen name="bgGeolocation" component={BgGeolocationScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
