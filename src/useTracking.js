@@ -42,13 +42,15 @@ const useTracking = (isActive) => {
       notificationText: 'enabled',
       //debug: true,
       startOnBoot: false,
-      stopOnTerminate: true,
+      stopOnTerminate: false,
       locationProvider: BackgroundGeolocation.DISTANCE_FILTER_PROVIDER, // DISTANCE_FILTER_PROVIDER for
       interval: 10000,
       fastestInterval: 5000,
       activitiesInterval: 10000,
       stopOnStillActivity: false,
-      url: 'http://192.168.81.15:3000/location',
+      url: 'http://192.168.0.135:3000/locations',
+      syncUrl: 'http://192.168.0.135:3000/sync',
+      syncThreshold: 100,
       httpHeaders: {
         'X-FOO': 'bar',
       },
